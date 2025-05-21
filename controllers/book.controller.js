@@ -81,3 +81,26 @@ exports.getBookById = async (req, res) => {
     res.status(500).json({ message: 'Error fetching book details', error: err.message });
   }
 };
+
+
+exports.searchBooks = async (req, res) => {
+  
+  const { title, author, genre } = req.query;
+  try {
+    let query = {}; 
+
+    if (title) query.title = new RegExp(title, 'i');
+    if (author) query.author = new RegExp(author, 'i');
+    if (genre) query.genre = new RegExp(genre, 'i');
+
+    const books = await Book.find(query);
+
+    if (books.length === 0) {
+      return res.status(404).json({ message: 'No books found' });
+    }
+
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
