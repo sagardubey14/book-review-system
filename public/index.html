@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 Book Review System</title>
+  <link rel="icon" type="image/png" href="icons8-open-book-50.png" />
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="endpoint-container">
+      <h1>📚 Book Review System (For testing purpose)</h1>
+
+      <section class="endpoint">
+        <h2>🔐 User Authentication</h2>
+
+        <div id="signupInputs" class="form-container">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="johnDoe123" />
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="john.doe@example.com" />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="password123" />
+          <button id="signupButton">Sign Up</button>
+        </div>
+
+        <div id="loginInputs" class="form-container">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="john.doe@example.com" />
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="password123" />
+          <button id="loginButton">Log In</button>
+        </div>
+      </section>
+
+      <section class="endpoint">
+        <h2>📚 Book Management</h2>
+
+        <div id="createBookInputs" class="form-container">
+          <label for="token">Token</label>
+          <input type="text" id="token" placeholder="Your JWT Token" />
+          <label for="bookTitle">Title</label>
+          <input type="text" id="bookTitle" placeholder="The Great Gatsby" />
+          <label for="bookAuthor">Author</label>
+          <input type="text" id="bookAuthor" placeholder="F. Scott Fitzgerald" />
+          <label for="bookGenre">Genre</label>
+          <input type="text" id="bookGenre" placeholder="Fiction" />
+          <label for="bookDescription">Description</label>
+          <textarea id="bookDescription" placeholder="Book description..."></textarea>
+          <button id="createBookButton">Add Book</button>
+        </div>
+
+        <div id="listBooksInputs" class="form-container">
+          <label for="tokenList">Token</label>
+          <input type="text" id="tokenList" placeholder="Your JWT Token" />
+          <label for="page">Page</label>
+          <input type="number" id="page" placeholder="1" />
+          <label for="limit">Limit</label>
+          <input type="number" id="limit" placeholder="5" />
+          <label for="author">Author</label>
+          <input type="text" id="author" placeholder="F. Scott Fitzgerald" />
+          <label for="genre">Genre</label>
+          <input type="text" id="genre" placeholder="Fiction" />
+          <button id="listBooksButton">List Books</button>
+        </div>
+      </section>
+
+      <section class="endpoint">
+        <h2>📖 Book Details</h2>
+        <div id="getBookInputs" class="form-container">
+          <label for="tokenGetBook">Token</label>
+          <input type="text" id="tokenGetBook" placeholder="Your JWT Token" />
+          <label for="bookId">Book ID</label>
+          <input type="text" id="bookId" placeholder="Book ID" />
+          <button id="getBookButton">Get Book Details</button>
+        </div>
+      </section>
+
+      <section class="endpoint">
+        <h2>✍️ Review Management</h2>
+
+        <div id="addReviewInputs" class="form-container">
+          <label for="tokenAddReview">Token</label>
+          <input type="text" id="tokenAddReview" placeholder="Your JWT Token" />
+          <label for="reviewBookId">Book ID</label>
+          <input type="text" id="reviewBookId" placeholder="Book ID" />
+          <label for="rating">Rating (1-5)</label>
+          <input type="number" id="rating" min="1" max="5" />
+          <label for="comment">Comment</label>
+          <textarea id="comment" placeholder="Write your review..."></textarea>
+          <button id="addReviewButton">Add Review</button>
+        </div>
+
+        <div id="updateReviewInputs" class="form-container">
+          <label for="tokenUpdateReview">Token</label>
+          <input type="text" id="tokenUpdateReview" placeholder="Your JWT Token" />
+          <label for="reviewId">Review ID</label>
+          <input type="text" id="reviewId" placeholder="Review ID" />
+          <label for="updateRating">New Rating (1-5)</label>
+          <input type="number" id="updateRating" min="1" max="5" />
+          <label for="updateComment">New Comment</label>
+          <textarea id="updateComment" placeholder="Updated review..."></textarea>
+          <button id="updateReviewButton">Update Review</button>
+        </div>
+
+        <div id="deleteReviewInputs" class="form-container">
+          <label for="tokenDeleteReview">Token</label>
+          <input type="text" id="tokenDeleteReview" placeholder="Your JWT Token" />
+          <label for="reviewIdToDelete">Review ID</label>
+          <input type="text" id="reviewIdToDelete" placeholder="Review ID" />
+          <button id="deleteReviewButton">Delete Review</button>
+        </div>
+      </section>
+
+      <section class="endpoint">
+        <h2>🔍 Search Books</h2>
+        <div id="searchBooksInputs" class="form-container">
+          <label for="tokenSearchBooks">Token</label>
+          <input type="text" id="tokenSearchBooks" placeholder="Your JWT Token" />
+          <label for="searchTitle">Title</label>
+          <input type="text" id="searchTitle" placeholder="Title" />
+          <label for="searchAuthor">Author</label>
+          <input type="text" id="searchAuthor" placeholder="Author" />
+          <label for="searchGenre">Genre</label>
+          <input type="text" id="searchGenre" placeholder="Genre" />
+          <button id="searchBooksButton">Search Books</button>
+        </div>
+      </section>
+    </div>
+
+    <section id="responseSection" class="response-section">
+      <h2>📢 API Response</h2>
+      <pre id="commonResponse"></pre>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
